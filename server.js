@@ -1,5 +1,7 @@
 const express = require("express");
 
+const PORT = 3000;
+
 const app = express();
 
 const pets=[
@@ -36,4 +38,6 @@ app.get('/pets',(req,res)=>{
     res.json(pets);
 })
 
-app.listen(3000);
+app.listen(3000,()=>{
+    console.log(`listenin to the smooth sounds of port ${PORT}`)
+});
