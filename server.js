@@ -1,8 +1,11 @@
 const express = require("express");
+const path =require("path");
 
 const PORT = 3000;
 
 const app = express();
+
+app.use(express.static("public"))
 
 const pets=[
     {
@@ -31,22 +34,31 @@ const pets=[
         breed:"Golden Retriever",
         color:"Golden"
     },
+    {
+        id:5,
+        name:"Gefilte",
+        species:"Fish",
+        breed:"Betta",
+        color:"Blue and Purple"
+    },
     
 ]
 
+
 app.get("/",(req,res)=>{
-    res.send("I think dogs are pretty cool")
+    res.sendFile(path.join(__dirname, "./views/index.html"));
 })
 
 app.get("/joe",(req,res)=>{
-    res.send("this is joes page!")
+    res.sendFile(path.join(__dirname, "./views/joe.html"));
 })
 
-app.get('/pets/',(req,res)=>{
+
+app.get('/api/pets/',(req,res)=>{
     res.json(pets);
 })
 
-app.get("/pets/:petId",(req,res)=>{
+app.get("/api/pets/:petId",(req,res)=>{
     const id = req.params.petId;
     for (let i = 0; i < pets.length; i++) {
         if(pets[i].id==id){
