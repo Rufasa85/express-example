@@ -18,9 +18,14 @@ app.get("/joe",(req,res)=>{
     res.sendFile(path.join(__dirname, "./views/joe.html"));
 })
 
-
 app.get('/api/pets/',(req,res)=>{
+    console.log(`${req.method} request to ${req.url}`)
     res.json(pets);
+})
+
+app.post("/api/pets/",(req,res)=>{
+    console.log(`${req.method} request to ${req.url}`)
+    res.send("this is a post request!")
 })
 
 app.get("/api/pets/:petId",(req,res)=>{
@@ -33,6 +38,6 @@ app.get("/api/pets/:petId",(req,res)=>{
     return res.send("sorry, no such pet")
 })
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log(`listenin to the smooth sounds of port ${PORT}`)
 });
