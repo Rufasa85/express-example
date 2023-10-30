@@ -5,7 +5,10 @@ const PORT = 3000;
 
 const app = express();
 
-app.use(express.static("public"))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static("public"));
 
 const pets=require("./db/pets.json")
 
@@ -24,8 +27,10 @@ app.get('/api/pets/',(req,res)=>{
 })
 
 app.post("/api/pets/",(req,res)=>{
+    console.log(req.body);
+    pets.push(req.body);
     console.log(`${req.method} request to ${req.url}`)
-    res.send("this is a post request!")
+    res.send("new pet created!")
 })
 
 app.get("/api/pets/:petId",(req,res)=>{
