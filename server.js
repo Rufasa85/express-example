@@ -1,5 +1,6 @@
 const express = require("express");
 const path =require("path");
+const fs = require('fs');
 
 const PORT = 3000;
 
@@ -27,10 +28,19 @@ app.get('/api/pets/',(req,res)=>{
 })
 
 app.post("/api/pets/",(req,res)=>{
-    console.log(req.body);
-    pets.push(req.body);
+    const newPet = {
+        id:crypto.randomUUID(),
+        name:req.body.name,
+        species:req.body.species,
+        breed:req.body.breed,
+        color:req.body.color
+    }
+    pets.push(newPet);
+    const storedPetsData = JSON.parse(fs.readFileSync("./db/pets.json"));
+    storedPetsData.push(newPet)
+    fs.writeFileSync("./db/pets.json",JSON.stringify(storedPetsData,null,4));
     console.log(`${req.method} request to ${req.url}`)
-    res.send("new pet created!")
+    res.json(newPet)
 })
 
 app.get("/api/pets/:petId",(req,res)=>{
