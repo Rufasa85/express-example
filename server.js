@@ -7,42 +7,7 @@ const app = express();
 
 app.use(express.static("public"))
 
-const pets=[
-    {
-        id:4,
-        name:"Puppy",
-        speices:"Dog",
-        breed:"Great Dane",
-        color:"harlequin"
-    },
-    {
-        id:1,
-        name:"Shiva",
-        species:"Cat",
-        color:"Tortie"
-    },
-    {
-        id:2,
-        name:"Bahamut",
-        species:"Cat",
-        color:"Buff Tabby"
-    }, 
-    {
-        id:3,
-        name:"Winston",
-        species:"Dog",
-        breed:"Golden Retriever",
-        color:"Golden"
-    },
-    {
-        id:5,
-        name:"Gefilte",
-        species:"Fish",
-        breed:"Betta",
-        color:"Blue and Purple"
-    },
-    
-]
+const pets=require("./db/pets.json")
 
 
 app.get("/",(req,res)=>{
