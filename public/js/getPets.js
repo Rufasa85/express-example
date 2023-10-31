@@ -5,7 +5,7 @@ fetch("/api/pets").then(res=>res.json()).then(data=>{
         //1. create element
         const petLi = document.createElement("li");
         //2. add content/styles
-        petLi.textContent=`${pet.id}. ${pet.name} is a good ${pet.color} ${pet.species}!`;
+        petLi.textContent=`${pet.name} is a good ${pet.color} ${pet.species}!`;
         //3. appends
         document.querySelector("#pets").append(petLi)
     })
