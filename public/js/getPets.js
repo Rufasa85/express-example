@@ -6,7 +6,7 @@ fetch("/api/pets").then(res=>res.json()).then(data=>{
         const petLi = document.createElement("li");
         //2. add content/styles
         petLi.textContent=`${pet.id}. ${pet.name} is a good ${pet.color} ${pet.species}!`;
-        //3. append
+        //3. appends
         document.querySelector("#pets").append(petLi)
     })
 }).catch(err=>{
@@ -24,7 +24,7 @@ newPetForm.addEventListener("submit",e=>{
         species:document.querySelector("#newPetSpecies").value,
         color:document.querySelector("#newPetColor").value,
     }
-   fetch("/api/pet",{
+   fetch("/api/pets",{
        method:"POST",
        body:JSON.stringify(petObj),
        headers:{
@@ -38,3 +38,4 @@ newPetForm.addEventListener("submit",e=>{
     }
    })
 })
+

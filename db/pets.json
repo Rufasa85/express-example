@@ -98,5 +98,16 @@
         "species": "cat",
         "breed": "shorthair",
         "color": "tuxedo"
+    },
+    {
+        "id": "bdfa6e2f-9779-4910-ae96-d016e7be9b48",
+        "name": "gato",
+        "species": "cat",
+        "breed": "imaginary",
+        "color": "orange"
+    },
+    {
+        "id": "c62cdd0f-c0c7-4ac2-a38a-23d5a5c80b8d",
+        "name": "arra"
     }
 ]
