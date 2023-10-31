@@ -31,7 +31,7 @@ router.get("/:petId",(req,res)=>{
             return res.json(pets[i])
         } 
     }
-    return res.send("sorry, no such pet")
+    return res.status(404).send("sorry, no such pet")
 })
 
 module.exports = router;

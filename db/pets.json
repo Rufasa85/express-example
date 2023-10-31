@@ -109,5 +109,18 @@
     {
         "id": "c62cdd0f-c0c7-4ac2-a38a-23d5a5c80b8d",
         "name": "arra"
+    },
+    {
+        "id": "c6c4216e-f715-4455-8239-0a09f8e78a09",
+        "name": "horse",
+        "species": "dog",
+        "breed": "doberman",
+        "color": "black"
+    },
+    {
+        "id": "fc5b15b7-dd93-49c0-98e1-902816e31b67",
+        "name": "koopa",
+        "species": "cat",
+        "color": "purple"
     }
 ]
