@@ -2,3 +2,8 @@ body {
     background:salmon;
     font-family: "Comic Sans MS",sans-serif;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    width:20%
+}

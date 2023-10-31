@@ -43,5 +43,60 @@
         "name": "luna",
         "species": "dog",
         "color": "black, white, and tan"
+    },
+    {
+        "id": "960eb715-0c37-4a02-9bb7-d697093881be",
+        "name": "koopa",
+        "species": "cat",
+        "color": "purple"
+    },
+    {
+        "id": "ff92c9d0-f879-456d-85aa-696d228b11d9",
+        "name": "Neko",
+        "species": "cat",
+        "breed": "shorthair",
+        "color": "tuxedo"
+    },
+    {
+        "id": "8c0d29c0-8720-421a-b3da-0899adb45f0e",
+        "name": "joe",
+        "species": "joejo",
+        "breed": "joe",
+        "color": "joe"
+    },
+    {
+        "id": "8db47d38-354d-4f83-8953-5ce206d01162",
+        "name": "cocoa",
+        "species": "dog",
+        "breed": "terrier mix",
+        "color": "brown"
+    },
+    {
+        "id": "dbd6480b-2bd9-46c3-9e5b-c5476276a7d6",
+        "name": "Ferdinand",
+        "species": "cat",
+        "breed": "stinky cat",
+        "color": "gray"
+    },
+    {
+        "id": "5bc9fc80-fa94-4bff-8046-5897fa4f69a3",
+        "name": "",
+        "species": "",
+        "breed": "",
+        "color": ""
+    },
+    {
+        "id": "f0ab4b76-17fe-4596-9f05-168a56002e2a",
+        "name": "Neko",
+        "species": "cat",
+        "breed": "shorthair",
+        "color": "tuxedo"
+    },
+    {
+        "id": "9eadf364-e69a-405e-b2e5-e23d07e4aa06",
+        "name": "Neko",
+        "species": "cat",
+        "breed": "shorthair",
+        "color": "tuxedo"
     }
 ]

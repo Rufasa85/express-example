@@ -13,3 +13,28 @@ fetch("/api/pets").then(res=>res.json()).then(data=>{
     console.log("womp womp")
     console.log(err);
 })
+
+const newPetForm = document.querySelector("#newPetForm");
+
+newPetForm.addEventListener("submit",e=>{
+    e.preventDefault();
+    const petObj = {
+        name:document.querySelector("#newPetName").value,
+        breed:document.querySelector("#newPetBreed").value,
+        species:document.querySelector("#newPetSpecies").value,
+        color:document.querySelector("#newPetColor").value,
+    }
+   fetch("/api/pet",{
+       method:"POST",
+       body:JSON.stringify(petObj),
+       headers:{
+           "Content-Type":"application/json"
+       }
+   }).then(res=>{
+    if(res.ok){
+        location.reload()
+    }else{
+        console.log("oh no an error!")
+    }
+   })
+})

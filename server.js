@@ -11,9 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
-const pets=require("./db/pets.json")
-
-
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname, "./views/index.html"));
 })
@@ -23,6 +20,7 @@ app.get("/joe",(req,res)=>{
 })
 
 app.get('/api/pets/',(req,res)=>{
+    const pets = JSON.parse(fs.readFileSync("./db/pets.json"))
     console.log(`${req.method} request to ${req.url}`)
     res.json(pets);
 })
@@ -35,7 +33,6 @@ app.post("/api/pets/",(req,res)=>{
         breed:req.body.breed,
         color:req.body.color
     }
-    pets.push(newPet);
     const storedPetsData = JSON.parse(fs.readFileSync("./db/pets.json"));
     storedPetsData.push(newPet)
     fs.writeFileSync("./db/pets.json",JSON.stringify(storedPetsData,null,4));
@@ -44,6 +41,7 @@ app.post("/api/pets/",(req,res)=>{
 })
 
 app.get("/api/pets/:petId",(req,res)=>{
+    const pets = JSON.parse(fs.readFileSync("./db/pets.json"))
     const id = req.params.petId;
     for (let i = 0; i < pets.length; i++) {
         if(pets[i].id==id){
